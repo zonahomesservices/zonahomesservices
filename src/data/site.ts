@@ -9,7 +9,7 @@ export const SITE = {
   region: 'FL',
   ogImage: 'https://res.cloudinary.com/jrdzspyk/image/upload/zona-og-cover.jpg',
   /** Keep false while the site is being tested. Set to true at launch to allow Google to index it. */
-  indexable: false,
+  indexable: true,
   web3formsKey: '172d5970-1048-46d0-b1aa-295a833f584a',
   cloudinary: 'https://res.cloudinary.com/jrdzspyk/image/upload/',
 };
