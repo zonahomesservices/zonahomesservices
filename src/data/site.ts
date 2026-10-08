@@ -7,11 +7,11 @@ export const SITE = {
   slogan: 'We build. We fix. We clean.',
   locality: 'Sebring',
   region: 'FL',
-  ogImage: 'https://res.cloudinary.com/kat6qihq/image/upload/zona-og-cover.jpg',
+  ogImage: 'https://res.cloudinary.com/jrdzspyk/image/upload/zona-og-cover.jpg',
   /** Keep false while the site is being tested. Set to true at launch to allow Google to index it. */
   indexable: false,
   web3formsKey: '3b22060f-4d39-46bd-b017-f286a8af9fb1',
-  cloudinary: 'https://res.cloudinary.com/kat6qihq/image/upload/',
+  cloudinary: 'https://res.cloudinary.com/jrdzspyk/image/upload/',
 };
 
 export type Tier = 'home' | 'near' | 'far' | 'ext';

@@ -26,7 +26,7 @@ clean URLs with trailing slashes; internal links between services, cities and th
 `public/assets/logo-light.png` is the light logo (house + wave icon from Gemini with the ZONA / HOMES SERVICES text) for the dark green header and footer. Favicons are in `public/` (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-512.png`). The old gold and charcoal logo stays on Cloudinary as `zona-logo-gold-charcoal` but is no longer used.
 
 ## Images
-Photos load from Cloudinary (`kat6qihq`) by public ID, no folders in the URLs. Originals are untouched; the site asks for
+Photos load from Cloudinary (cloud name `jrdzspyk`, set in `src/data/site.ts` and the final CTA background in `global.css`) by public ID, no folders in the URLs. Originals are untouched; the site asks for
 responsive sizes (`f_auto,q_auto:best,w_N`). Current photos are AI-generated stand-ins: replace with real job photos.
 
 ## Quote form

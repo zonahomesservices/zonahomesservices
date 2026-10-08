@@ -175,7 +175,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Final CTA */
 .cta {
   padding: clamp(4rem, 9vw, 7rem) 0; text-align: center;
-  background-image: linear-gradient(rgba(38, 44, 30, .84), rgba(38, 44, 30, .9)), url("https://res.cloudinary.com/kat6qihq/image/upload/f_auto,q_auto:best,w_1800/zona-cta-background-house");
+  background-image: linear-gradient(rgba(38, 44, 30, .84), rgba(38, 44, 30, .9)), url("https://res.cloudinary.com/jrdzspyk/image/upload/f_auto,q_auto:best,w_1800/zona-cta-background-house");
   background-size: cover; background-position: center;
 }
 .cta-inner { max-width: 44rem; }
