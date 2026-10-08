@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Zona Homes Services LLC',
   short: 'Zona Homes Services',
-  url: 'https://zonahomes-denvasweb.vercel.app',
+  url: 'https://zonahomesservices.com',
   phoneDisplay: '(863) 449-1949',
   phoneTel: '+18634491949',
   slogan: 'We build. We fix. We clean.',

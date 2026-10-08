@@ -1,9 +1,9 @@
 # Zona Homes Services LLC - website
 
-Multi-page site built with [Astro](https://astro.build) (static output). Deploys on Vercel with no extra config:
-Vercel detects Astro, runs `npm run build` and serves `dist/`.
+Multi-page site built with [Astro](https://astro.build) (static output), hosted on Cloudflare Pages.
+Build command `npm run build`, output directory `dist`, Node 22 (`.node-version`).
 
-Live (test): https://zonahomes-denvasweb.vercel.app/
+Production domain: https://zonahomesservices.com/
 
 ## Pages (18)
 `/`, `/services/`, `/services/<slug>/` x6, `/property-managers/`, `/areas/`, `/areas/<city>/` x5 (Sebring, Avon Park, Lake Placid, Davenport, Sarasota), `/contact/`, `/privacy/`, 404.
@@ -15,7 +15,7 @@ Live (test): https://zonahomes-denvasweb.vercel.app/
 - `src/components/` - header, footer, quote form, FAQ, service-area map
 - `src/layouts/BaseLayout.astro` - SEO tags, Open Graph, canonical, JSON-LD
 - `src/styles/global.css` - all styling. Palette (green and cream, from the client's mockup) is in `:root` at the top; dark green bands are the header, property-managers band, final CTA and footer
-- `public/` - favicon and fonts. The share image is `zona-og-cover` on Cloudinary
+- `public/` - favicons, fonts, `_headers` (cache and security headers for Cloudflare). The share image is `zona-og-cover` on Cloudinary
 
 ## SEO
 Unique title, description, canonical and Open Graph on every page; LocalBusiness (HousePainter), Service,
@@ -42,3 +42,10 @@ When the real domain is connected, change `site` in `astro.config.mjs`, `url` in
 
 ## Commands
 `npm install`, `npm run dev`, `npm run build`
+
+## Hosting (Cloudflare Pages)
+- Project connected to the GitHub repo; every push to `main` deploys, other branches get preview URLs.
+- Settings: framework preset Astro, build command `npm run build`, output `dist`, env var `NODE_VERSION=22` if the build asks for it.
+- Custom domains: `zonahomesservices.com` and `www.zonahomesservices.com` (DNS on Cloudflare); redirect www to the apex.
+- Headers live in `public/_headers`. There is no `vercel.json` anymore.
+- The site stays `noindex` until `indexable: true` in `src/data/site.ts`.
