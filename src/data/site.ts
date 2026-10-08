@@ -10,7 +10,7 @@ export const SITE = {
   ogImage: 'https://res.cloudinary.com/jrdzspyk/image/upload/zona-og-cover.jpg',
   /** Keep false while the site is being tested. Set to true at launch to allow Google to index it. */
   indexable: false,
-  web3formsKey: '3b22060f-4d39-46bd-b017-f286a8af9fb1',
+  web3formsKey: '172d5970-1048-46d0-b1aa-295a833f584a',
   cloudinary: 'https://res.cloudinary.com/jrdzspyk/image/upload/',
 };
 
