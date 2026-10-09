@@ -17,7 +17,7 @@ export const cities: City[] = [
     slug: 'sebring',
     name: 'Sebring',
     metaTitle: 'Sebring, FL Painter & Home Repairs | Zona Homes Services',
-    metaDescription: 'Based in Sebring, FL: interior and exterior painting, epoxy garage floors, repairs, junk removal and deep cleaning. Call Zona Homes at (863) 449-1949.',
+    metaDescription: 'Based in Sebring, FL: interior and exterior painting, epoxy garage floors, repairs, junk removal and cleaning. Call Zona Homes at (863) 449-1949.',
     h1: 'Painting, epoxy floors and home repairs in Sebring, FL',
     intro: 'Sebring is our home base. Whether you live near Lake Jackson, close to downtown or out along US-27, one crew can paint, repair, clean out and clean your home without you chasing different contractors.',
     sections: [
@@ -33,7 +33,7 @@ export const cities: City[] = [
     nearby: ['Avon Park', 'Lake Placid', 'Frostproof'],
     faqs: [
       { q: 'Are you based in Sebring?', a: 'Yes. Zona Homes Services is based in Sebring, FL, and we also serve nearby cities within about 70 miles.' },
-      { q: 'What services do you offer in Sebring?', a: 'Interior and exterior painting, epoxy and garage floors, repairs and handyman work, junk removal and deep cleaning.' },
+      { q: 'What services do you offer in Sebring?', a: 'Interior and exterior painting, epoxy and garage floors, repairs and handyman work, junk removal, standard cleaning and deep cleaning.' },
       { q: 'Do you work with landlords and property managers in Sebring?', a: 'Yes. We handle unit turns with painting, cleaning, cleanouts and repairs from one crew, usually in 24 to 48 hours.' },
     ],
   },
@@ -41,7 +41,7 @@ export const cities: City[] = [
     slug: 'avon-park',
     name: 'Avon Park',
     metaTitle: 'Painting & Epoxy Floors in Avon Park, FL | Zona Homes',
-    metaDescription: 'Painting, epoxy garage floors, repairs, junk removal and deep cleaning in Avon Park, FL, a short drive from our Sebring base. Call (863) 449-1949.',
+    metaDescription: 'Painting, epoxy garage floors, repairs, junk removal and cleaning in Avon Park, FL, a short drive from our Sebring base. Call (863) 449-1949.',
     h1: 'Painting, epoxy floors and home repairs in Avon Park, FL',
     intro: 'Avon Park is a short drive north of our Sebring base on US-27, so we can reach you quickly for quotes and for the job itself. We paint, repair, clean out and clean homes and rentals across Avon Park.',
     sections: [
@@ -65,7 +65,7 @@ export const cities: City[] = [
     slug: 'lake-placid',
     name: 'Lake Placid',
     metaTitle: 'Painting & Epoxy Floors in Lake Placid, FL | Zona Homes',
-    metaDescription: 'Interior and exterior painting, epoxy garage floors, repairs, junk removal and deep cleaning in Lake Placid, FL. Call Zona Homes at (863) 449-1949.',
+    metaDescription: 'Interior and exterior painting, epoxy garage floors, repairs, junk removal and cleaning in Lake Placid, FL. Call Zona Homes at (863) 449-1949.',
     h1: 'Painting, epoxy floors and home repairs in Lake Placid, FL',
     intro: 'Lake Placid is just south of Sebring on US-27, so it is an easy trip for our crew. We paint, repair, clean out and clean homes and rentals around Lake Placid, from golf and lakeside communities to older neighborhoods.',
     sections: [
@@ -89,9 +89,9 @@ export const cities: City[] = [
     slug: 'davenport',
     name: 'Davenport',
     metaTitle: 'Painting & Epoxy Floors in Davenport, FL | Zona Homes',
-    metaDescription: 'Interior painting, epoxy garage floors, repairs, junk removal and deep cleaning in Davenport, FL, including rentals and vacation homes. Call (863) 449-1949.',
+    metaDescription: 'Interior painting, epoxy garage floors, repairs, junk removal and cleaning in Davenport, FL, including rentals and vacation homes. Call (863) 449-1949.',
     h1: 'Painting, epoxy floors and home repairs in Davenport, FL',
-    intro: 'We travel from our Sebring base to Davenport for painting, epoxy garage floors, repairs, junk removal and deep cleaning. Many homes here are newer subdivisions, second homes and rentals, so the work is often about a clean finish and a quick turnaround.',
+    intro: 'We travel from our Sebring base to Davenport for painting, epoxy garage floors, repairs, junk removal and cleaning. Many homes here are newer subdivisions, second homes and rentals, so the work is often about a clean finish and a quick turnaround.',
     sections: [
       {
         title: 'Homes we work on in Davenport',
@@ -113,9 +113,9 @@ export const cities: City[] = [
     slug: 'sarasota',
     name: 'Sarasota',
     metaTitle: 'Painting & Epoxy Floors in Sarasota, FL | Zona Homes',
-    metaDescription: 'Interior and exterior painting, epoxy garage floors, repairs, junk removal and deep cleaning in Sarasota, Bradenton and Lakewood Ranch. Call (863) 449-1949.',
+    metaDescription: 'Interior and exterior painting, epoxy garage floors, repairs, junk removal and cleaning in Sarasota, Bradenton and Lakewood Ranch. Call (863) 449-1949.',
     h1: 'Painting, epoxy floors and home repairs in Sarasota, FL',
-    intro: 'Sarasota is one of the cities we travel to from our Sebring base. We paint, coat garage floors with epoxy, make small repairs, haul away junk and deep clean homes and rentals in Sarasota, Bradenton and Lakewood Ranch.',
+    intro: 'Sarasota is one of the cities we travel to from our Sebring base. We paint, coat garage floors with epoxy, make small repairs, haul away junk and clean homes and rentals in Sarasota, Bradenton and Lakewood Ranch.',
     sections: [
       {
         title: 'Homes we work on in Sarasota',
@@ -129,7 +129,7 @@ export const cities: City[] = [
     nearby: ['Bradenton', 'Lakewood Ranch', 'Arcadia'],
     faqs: [
       { q: 'Are you based in Sarasota?', a: 'No. We are based in Sebring, FL and travel to Sarasota, Bradenton and Lakewood Ranch for jobs.' },
-      { q: 'What services do you offer in Sarasota?', a: 'Interior and exterior painting, epoxy and garage floors, repairs and handyman work, junk removal and deep cleaning.' },
+      { q: 'What services do you offer in Sarasota?', a: 'Interior and exterior painting, epoxy and garage floors, repairs and handyman work, junk removal, standard cleaning and deep cleaning.' },
       { q: 'How do I get a quote for a job in Sarasota?', a: 'Call (863) 449-1949 or send the quote form with your address and a short description of the job, and we will call you back.' },
     ],
   },

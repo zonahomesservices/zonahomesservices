@@ -25,7 +25,7 @@ const withoutPage = ['near', 'far'] as const;
       <div class="hero-grid">
         <div class="hero-copy">
           <h1>Areas we serve around Sebring, FL</h1>
-          <p class="lead">We are based in Sebring and drive up to about 70 miles for painting, epoxy floors, repairs, junk removal and deep cleaning. Not on the list? Call and ask.</p>
+          <p class="lead">We are based in Sebring and drive up to about 70 miles for painting, epoxy floors, repairs, junk removal and cleaning. Not on the list? Call and ask.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href={`tel:${SITE.phoneTel}`}><Icon name="phone" />Call {SITE.phoneDisplay}</a>
           </div>
@@ -62,7 +62,7 @@ const withoutPage = ['near', 'far'] as const;
     <div class="wrap">
       <div class="section-head"><h2>City pages</h2></div>
       <div class="link-grid">
-        {cities.map((c) => <a href={`/areas/${c.slug}/`}><strong>{c.name}, FL</strong><span>Painting, epoxy floors, repairs, junk removal and deep cleaning in {c.name}.</span></a>)}
+        {cities.map((c) => <a href={`/areas/${c.slug}/`}><strong>{c.name}, FL</strong><span>Painting, epoxy floors, repairs, junk removal and cleaning in {c.name}.</span></a>)}
       </div>
     </div>
   </section>

@@ -10,7 +10,7 @@ export interface Service {
   imgAlt: string;
   card: string;           // one line for cards
   short: string;          // very short blurb for the home service row
-  icon: 'roller' | 'house' | 'layers' | 'wrench' | 'trash' | 'spray';
+  icon: 'roller' | 'house' | 'layers' | 'wrench' | 'trash' | 'spray' | 'sparkles';
   metaTitle: string;
   metaDescription: string;
   h1: string;
@@ -265,6 +265,54 @@ export const services: Service[] = [
     schemaType: 'Junk removal',
   },
   {
+    slug: 'standard-cleaning',
+    short: 'One-time or recurring visits',
+    icon: 'sparkles',
+    name: 'Standard cleaning',
+    formValue: 'Standard cleaning',
+    imageId: 'zona-standard-cleaning-living-room',
+    imgW: 1792, imgH: 2400,
+    imgAlt: 'Tidy living room after a regular cleaning, with a vacuum cleaner and a caddy of spray bottles and cloths on the floor',
+    card: 'One-time or recurring cleaning for any type of property.',
+    metaTitle: 'Standard House Cleaning in Sebring, FL | Zona Homes',
+    metaDescription: 'One-time and recurring cleaning for homes, rentals and other properties in Sebring, FL and nearby cities. We bring the products. Call (863) 449-1949.',
+    h1: 'Standard cleaning in Sebring, FL',
+    intro: [
+      'A standard clean keeps a space fresh and comfortable. We come once or on a regular schedule, bring our own products and equipment, and clean what we agree on with you beforehand.',
+      'We clean any type of property in Sebring, Avon Park, Lake Placid and nearby cities, including houses, apartments, rentals and commercial spaces. What the visit includes depends on the property and what you need, so we talk it through first.',
+    ],
+    includesTitle: 'What a standard clean can include',
+    includes: [
+      'Dusting and wiping of surfaces',
+      'Kitchens: counters, sinks and appliance exteriors',
+      'Bathrooms: sinks, showers or tubs and toilets',
+      'Floors vacuumed and mopped',
+      'Trash emptied',
+      'Extra tasks added when you ask for them',
+    ],
+    process: [
+      { title: 'Tell us about the property', text: 'Share the type of property, its size and what needs to be cleaned.' },
+      { title: 'Choose one time or recurring', text: 'You can book a single visit or set up regular cleanings on a schedule that works for you.' },
+      { title: 'Agree on what is included', text: 'We confirm the tasks and the price before the first visit. What is included depends on what you need.' },
+      { title: 'We bring everything and clean', text: 'We bring the products and equipment, clean the space and leave it ready to use.' },
+    ],
+    tips: [
+      { title: 'Start with a clean slate', text: 'If a place has not been cleaned in a while, a deep clean first makes regular visits lighter and easier to maintain.' },
+      { title: 'Recurring keeps it easy', text: 'Regular visits stop dirt from building up, so each clean takes less effort.' },
+      { title: 'Tell us your priorities', text: 'If the kitchen or bathrooms matter most, say so when you call and we will plan the visit around them.' },
+    ],
+    faqs: [
+      { q: 'What is the difference between standard and deep cleaning?', a: 'A standard clean maintains a space that is already in good shape. A deep clean reaches built-up grime in kitchens, bathrooms, baseboards and floors, and suits a move-in, a move-out or the end of a project.' },
+      { q: 'Do you offer one-time and recurring cleaning?', a: 'Yes. You can book a single visit or set up regular cleanings. Tell us what works for you and we will plan it together.' },
+      { q: 'What is included in a standard clean?', a: 'It depends on the property and what you need. We agree on the tasks and the price with you before we start.' },
+      { q: 'Do you bring cleaning products and equipment?', a: 'Yes. We bring our own products and equipment.' },
+      { q: 'What types of property do you clean?', a: 'Any type: houses, apartments, rentals and commercial spaces. Call us and describe the property.' },
+      { q: 'How do I get a quote?', a: 'Call (863) 449-1949 or use the quote form on this page with the type and size of the property and how often you need cleaning.' },
+    ],
+    related: ['deep-cleaning', 'junk-removal', 'interior-painting'],
+    schemaType: 'House cleaning',
+  },
+  {
     slug: 'deep-cleaning',
     short: 'Kitchens, baths and whole homes',
     icon: 'spray',
@@ -308,7 +356,7 @@ export const services: Service[] = [
       { q: 'Do I have to be home?', a: 'Not always. Tell us about access when you call and we will work out a plan that fits.' },
       { q: 'How do I get a quote?', a: 'Call (863) 449-1949 or use the quote form on this page with the size of the home and what you need.' },
     ],
-    related: ['interior-painting', 'junk-removal', 'repairs-handyman'],
+    related: ['standard-cleaning', 'interior-painting', 'junk-removal'],
     schemaType: 'Deep cleaning',
   },
 ];
