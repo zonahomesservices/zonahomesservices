@@ -304,7 +304,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .prose h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin: 2rem 0 .8rem; }
 .prose h2:first-child { margin-top: 0; }
 .prose ul { display: grid; gap: .4rem; margin: 0 0 1rem 1.2rem; list-style: disc; }
-.prose a, .link-inline { color: var(--accent-deep); font-weight: 600; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.prose a:not(.btn), .link-inline { color: var(--accent-deep); font-weight: 600; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 .process { display: grid; gap: 1.4rem; counter-reset: step; max-width: 46rem; }
 .process li { counter-increment: step; display: grid; grid-template-columns: 3rem 1fr; gap: .2rem 1rem; align-items: baseline; }
 .process li::before { content: counter(step); grid-row: span 2; font-family: var(--serif); font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--accent); font-variant-numeric: lining-nums; }
