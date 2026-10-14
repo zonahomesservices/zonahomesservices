@@ -617,3 +617,15 @@ body.menu-open { overflow: hidden; }
   .steps--4 { grid-template-columns: 1fr; }
   .lp-footer { padding-bottom: 6rem; }
 }
+
+
+/* ===== No sideways movement on phones ===== */
+/* Nothing may widen the page or be dragged sideways. `clip` (unlike `hidden`) keeps the sticky header working. */
+html, body { max-width: 100%; overflow-x: clip; overscroll-behavior-x: none; }
+@supports not (overflow: clip) { html, body { overflow-x: hidden; } }
+/* Vertical scroll and pinch-zoom only: no horizontal drag and no double-tap zoom that leaves the page shifted */
+html, body { touch-action: pan-y pinch-zoom; }
+/* Hidden helpers no longer sit thousands of pixels off-screen */
+.skip-link { position: absolute; left: 1rem; top: 0; transform: translateY(-250%); background: var(--white); padding: .7rem 1rem; z-index: 100; }
+.skip-link:focus { transform: none; top: 1rem; }
+.hp { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); opacity: 0; pointer-events: none; }
