@@ -1,0 +1,9 @@
+---
+import { SITE } from '../data/site';
+---
+<footer class="site-footer lp-footer">
+  <div class="wrap">
+    <p>{SITE.name} &middot; {SITE.locality}, {SITE.region} &middot; <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a></p>
+    <p class="lp-footer-small"><a href="/privacy/">Privacy policy</a> &middot; &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
+  </div>
+</footer>

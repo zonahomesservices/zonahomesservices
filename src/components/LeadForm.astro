@@ -1,0 +1,93 @@
+---
+import { SITE, cityOptions } from '../data/site';
+interface Props {
+  id?: string;
+  title?: string;
+  note?: string;
+  subject?: string;
+  full?: boolean;        // adds the optional details box
+  button?: string;
+}
+const { id = 'quote', title = 'Get a quote', note, subject = 'New lead - Zona Homes Services landing page', full = false, button = 'Send my request' } = Astro.props;
+const needs = ['Make-ready / unit turn', 'Interior painting', 'Exterior painting', 'Painting and cleaning', 'Epoxy garage floor', 'Other'];
+const tracking = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ttclid', 'msclkid'];
+---
+<div class="quote-card quote-short" id={id}>
+  <h2 class="quote-title">{title}</h2>
+  {note && <p class="quote-note">{note}</p>}
+  <form class="quote-form js-lead-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={SITE.web3formsKey} />
+    <input type="hidden" name="subject" value={subject} />
+    <input type="hidden" name="from_name" value="Zona Homes Services website" />
+    <input type="hidden" name="landing_page" value="" />
+    <input type="hidden" name="referrer" value="" />
+    {tracking.map((t) => <input type="hidden" name={t} value="" data-track />)}
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+    <div class="field">
+      <label for={`${id}-name`}>Name</label>
+      <input id={`${id}-name`} name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for={`${id}-phone`}>Phone</label>
+      <input id={`${id}-phone`} name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+    </div>
+    <div class="field">
+      <label for={`${id}-city`}>City</label>
+      <select id={`${id}-city`} name="city" required>
+        <option value="" disabled selected>Where is the property?</option>
+        {cityOptions.map((c) => <option>{c}</option>)}
+      </select>
+    </div>
+    <div class="field">
+      <label for={`${id}-need`}>What do you need?</label>
+      <select id={`${id}-need`} name="service" required>
+        <option value="" disabled selected>Choose one</option>
+        {needs.map((n) => <option>{n}</option>)}
+      </select>
+    </div>
+    {full && (
+      <div class="field field-wide">
+        <label for={`${id}-details`}>Details (optional)</label>
+        <textarea id={`${id}-details`} name="message" rows="3" placeholder="How many units, size, timing, anything we should know"></textarea>
+      </div>
+    )}
+    <div class="field-wide form-actions">
+      <button class="btn btn-primary" type="submit">{button}</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+  <p class="quote-call">Prefer to talk? Call <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a></p>
+</div>
+
+<script>
+  // Lead forms: remember where the visitor came from (ad, campaign) and send it with the message.
+  const params = new URLSearchParams(location.search);
+  document.querySelectorAll<HTMLFormElement>('.js-lead-form').forEach((form) => {
+    form.querySelectorAll<HTMLInputElement>('input[data-track]').forEach((input) => {
+      const v = params.get(input.name);
+      if (v) { input.value = v; try { sessionStorage.setItem('lp_' + input.name, v); } catch {} }
+      else { try { input.value = sessionStorage.getItem('lp_' + input.name) || ''; } catch {} }
+    });
+    const lp = form.querySelector<HTMLInputElement>('input[name="landing_page"]'); if (lp) lp.value = location.href;
+    const ref = form.querySelector<HTMLInputElement>('input[name="referrer"]'); if (ref) ref.value = document.referrer;
+
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.className = 'form-status'; status.textContent = 'Sending...'; submit.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error('failed');
+        window.location.href = '/thank-you/';
+      } catch {
+        status.className = 'form-status is-error';
+        status.textContent = 'The form did not send. Please call (863) 449-1949 or try again.';
+        submit.disabled = false;
+      }
+    });
+  });
+</script>

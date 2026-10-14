@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
+import LandingHeader from '../components/LandingHeader.astro';
+import LandingFooter from '../components/LandingFooter.astro';
 import { SITE, TOWNS } from '../data/site';
 
 interface Props {
@@ -12,8 +14,9 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   noindex?: boolean;
   hasQuote?: boolean;           // page has the #quote form
+  landing?: boolean;            // ad landing page: minimal header and footer, no site navigation
 }
-const { title, description, path, jsonLd = [], noindex = false, hasQuote = true } = Astro.props;
+const { title, description, path, jsonLd = [], noindex = false, hasQuote = true, landing = false } = Astro.props;
 const canonical = new URL(path, SITE.url).href;
 const ogImage = new URL(SITE.ogImage, SITE.url).href;
 
@@ -65,16 +68,18 @@ const business = {
     <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
 
+    {SITE.gaId && <script async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}`}></script>}
+    {SITE.gaId && <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${SITE.gaId}');`} />}
     <script type="application/ld+json" set:html={JSON.stringify(business)} />
     {jsonLd.map((node) => <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', ...node })} />)}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <Header currentPath={path} />
+    {landing ? <LandingHeader /> : <Header currentPath={path} />}
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    {landing ? <LandingFooter /> : <Footer />}
     <MobileBar quoteHref={hasQuote ? '#quote' : '/contact/'} />
   </body>
 </html>

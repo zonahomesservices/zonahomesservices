@@ -5,6 +5,8 @@ export const SITE = {
   phoneDisplay: '(863) 449-1949',
   phoneTel: '+18634491949',
   slogan: 'We build. We fix. We clean.',
+  /** Google Analytics 4 measurement id (G-XXXXXXXXXX). Empty = no analytics script is added. */
+  gaId: '',
   reviewUrl: 'https://g.page/r/CdqDm4kvLRMREBM/review',
   locality: 'Sebring',
   region: 'FL',

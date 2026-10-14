@@ -1,0 +1,10 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../data/site';
+---
+<header class="site-header lp-header">
+  <div class="wrap header-row">
+    <span class="brand"><img src="/assets/logo-wordmark.webp" width="620" height="208" alt="Zona Homes Services LLC" /></span>
+    <a class="btn btn-primary header-call" href={`tel:${SITE.phoneTel}`} aria-label={`Call ${SITE.phoneDisplay}`}><Icon name="phone" /><span class="call-text"><span class="hide-sm">Call </span>{SITE.phoneDisplay}</span></a>
+  </div>
+</header>

@@ -581,3 +581,39 @@ body.menu-open { overflow: hidden; }
 .review-btn { width: 100%; justify-content: center; padding: 1rem 1.2rem; font-size: 1.05rem; }
 .review-note { text-align: center; margin: 2rem 0 0; color: var(--slate); }
 @media (max-width: 860px) { .review-grid { grid-template-columns: 1fr; } }
+
+/* ===== Ad landing page (/lp/...) ===== */
+.hero-photo--lp .hero-photo__bg { object-position: 60% 55%; }
+@media (max-width: 860px) { .hero-photo--lp .hero-photo__bg { object-position: 55% 45%; } }
+.lp-header .brand { display: inline-flex; }
+@media (max-width: 640px) { .lp-header .header-call .call-text { display: inline; } .lp-header .header-call { padding: .7rem .9rem; } }
+.lp-trust { background: var(--paper); border-bottom: 1px solid var(--line); padding: 1.6rem 0; }
+.lp-trust ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; list-style: none; margin: 0; padding: 0; }
+.lp-trust li { display: flex; gap: .9rem; align-items: flex-start; }
+.lp-trust .ic { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; background: var(--green-800); color: var(--gold); border: 1.5px solid var(--gold); display: inline-flex; align-items: center; justify-content: center; }
+.lp-trust .ic svg { width: 20px; height: 20px; }
+.lp-trust h3 { font-size: 1.25rem; margin: 0 0 .2rem; }
+.lp-trust p { margin: 0; color: var(--slate); font-size: .98rem; }
+.lp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.lp-card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.lp-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.lp-card > div { padding: 1.2rem 1.4rem 1.5rem; }
+.lp-card h3 { font-size: 1.6rem; margin: 0 0 .4rem; }
+.lp-card p { margin: 0; color: var(--slate); }
+.lp-also-title { margin: 2rem 0 .7rem; font-weight: 600; color: var(--ink); }
+.lp-also, .lp-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .7rem; }
+.lp-also li, .lp-chips li { display: inline-flex; align-items: center; gap: .5rem; background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: .5rem 1rem; font-weight: 500; }
+.lp-also svg { width: 18px; height: 18px; color: var(--green-700); }
+.steps--4 { grid-template-columns: repeat(4, 1fr); }
+.section-head.center { margin-inline: auto; text-align: center; }
+.lp-final .quote-card { max-width: 680px; margin: 0 auto; }
+.lp-final .quote-card .btn-primary { width: 100%; }
+.lp-footer { padding: 2rem 0; text-align: center; }
+.lp-footer p { margin: 0 0 .4rem; }
+.lp-footer-small { font-size: .9rem; opacity: .85; }
+@media (max-width: 860px) {
+  .lp-trust ul { grid-template-columns: 1fr; }
+  .lp-cards { grid-template-columns: 1fr; }
+  .steps--4 { grid-template-columns: 1fr; }
+  .lp-footer { padding-bottom: 6rem; }
+}

@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Faq from '../../components/Faq.astro';
+import Icon from '../../components/Icon.astro';
+import Img from '../../components/Img.astro';
+import { SITE, TOWNS } from '../../data/site';
+
+const faqs = [
+  { q: 'What does a make-ready include?', a: 'Interior painting, deep cleaning, junk removal and small repairs, and epoxy or garage floor work when a unit has a garage. You choose the items you need.' },
+  { q: 'How fast can you turn a unit?', a: 'Usually 24 to 48 hours, depending on the size of the unit and the scope. Tell us your deadline when you call and we will tell you what is realistic.' },
+  { q: 'Do you work outside Sebring?', a: 'Yes. We are based in Sebring and travel to Avon Park, Lake Placid, Davenport, Sarasota and the cities in between. Call us with the address.' },
+  { q: 'Can you take several units?', a: 'Tell us how many units you have and when you need them. We will plan the schedule with you.' },
+  { q: 'How do I get a quote?', a: 'Call (863) 449-1949 or use the form on this page with the address, the size of the unit and what you need.' },
+];
+---
+<BaseLayout
+  title="Painting & Make-Ready for Property Managers | Zona Homes"
+  description="Unit turns and painting for property managers and landlords, from Sebring to Sarasota. Paint, clean, haul out and repair with one crew. (863) 449-1949"
+  path="/lp/painting-make-ready/"
+  noindex
+  landing
+  jsonLd={[{ '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }]}
+>
+  <section class="hero-photo hero-photo--lp">
+    <Img class="hero-photo__bg" id="zona-exterior-painting-house" widths={[640, 960, 1440, 1920]} sizes="100vw" width={2400} height={1792}
+      alt="Single-story Florida home with a freshly painted exterior and a landscaped front yard" eager />
+    <div class="wrap hero-photo__inner">
+      <div class="hero-copy">
+        <h1>Painting and make-ready for rental units, from Sebring to Sarasota</h1>
+        <p class="lead">Empty units cost you rent. Send us the unit and one crew paints, cleans, hauls out what was left behind and fixes the small stuff, usually in 24 to 48 hours.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={`tel:${SITE.phoneTel}`}><Icon name="phone" />Call {SITE.phoneDisplay}</a>
+        </div>
+      </div>
+      <LeadForm id="quote" title="Get a quote for your unit" />
+    </div>
+  </section>
+
+  <section class="lp-trust">
+    <div class="wrap">
+      <ul>
+        <li><span class="ic"><Icon name="check" /></span><div><h3>One crew, one call</h3><p>Painting, cleaning, junk removal and small repairs from the same team.</p></div></li>
+        <li><span class="ic"><Icon name="check" /></span><div><h3>Fast turns</h3><p>Usually 24 to 48 hours, depending on the size of the unit and the scope.</p></div></li>
+        <li><span class="ic"><Icon name="check" /></span><div><h3>Sebring to Sarasota</h3><p>We drive from our Sebring base to Davenport, Sarasota and the cities in between.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>What we handle</h2><p>Painting on its own, or the full make-ready for a unit.</p></div>
+      <div class="lp-cards">
+        <div class="lp-card">
+          <Img id="zona-interior-painting-hallway" widths={[480, 720, 960]} sizes="(min-width: 860px) 480px, 100vw" width={1792} height={2400} alt="Hallway with freshly painted walls and clean trim" />
+          <div><h3>Painting</h3><p>Interior walls, ceilings, trim and doors, and exterior stucco, siding and trim. Careful prep and clean lines.</p></div>
+        </div>
+        <div class="lp-card">
+          <Img id="zona-deep-cleaning-kitchen" widths={[480, 720, 960]} sizes="(min-width: 860px) 480px, 100vw" width={1792} height={2400} alt="Clean kitchen with wood cabinets, white counters and a damp tile floor" />
+          <div><h3>Make-ready for property managers</h3><p>Paint, deep clean, junk removal and small repairs, plus epoxy or garage floor work when the unit has a garage. You choose the items.</p></div>
+        </div>
+      </div>
+      <p class="lp-also-title">Also available</p>
+      <ul class="lp-also">
+        <li><Icon name="sparkles" />Standard cleaning</li>
+        <li><Icon name="spray" />Deep cleaning</li>
+        <li><Icon name="trash" />Junk removal</li>
+        <li><Icon name="wrench" />Drywall and handyman repairs</li>
+        <li><Icon name="layers" />Epoxy garage floors</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head"><h2>How it works</h2></div>
+      <ol class="steps steps--4">
+        <li><span class="step-n" aria-hidden="true">1</span><h3>Send us the unit</h3><p>Call or use the form with the address, the size and what needs to be done.</p></li>
+        <li><span class="step-n" aria-hidden="true">2</span><h3>We confirm scope and price</h3><p>You get a clear price before any work starts.</p></li>
+        <li><span class="step-n" aria-hidden="true">3</span><h3>One crew does the work</h3><p>Painting, cleaning, haul-out and repairs, in the order that gets the unit ready fastest.</p></li>
+        <li><span class="step-n" aria-hidden="true">4</span><h3>Ready to rent</h3><p>We go through the unit with you before we leave.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Where we work</h2><p>Based in Sebring. We drive up to about 70 miles, all the way to Sarasota.</p></div>
+      <ul class="lp-chips">
+        {TOWNS.map((t) => <li>{t.name}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap"><Faq items={faqs} /></div>
+  </section>
+
+  <section class="section lp-final">
+    <div class="wrap">
+      <div class="section-head center"><h2>Send us your next unit</h2><p>Tell us what you need and we will call you back.</p></div>
+      <LeadForm id="quote-final" title="Get a quote" full />
+    </div>
+  </section>
+</BaseLayout>

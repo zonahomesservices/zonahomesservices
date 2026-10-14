@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout title="Thank you | Zona Homes Services" description="We got your request and will call you back soon." path="/thank-you/" noindex landing hasQuote={false}>
+  <section class="center-page">
+    <div class="wrap">
+      <h1>Thank you, we got your request</h1>
+      <p>We will call you back soon. If it is urgent, call us now.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={`tel:${SITE.phoneTel}`}><Icon name="phone" />Call {SITE.phoneDisplay}</a>
+        <a class="btn btn-line" href="/">Visit our website</a>
+      </div>
+    </div>
+  </section>
+  <script is:inline>
+    // Counts the lead in Google Analytics (and ads) if the tag is installed
+    if (typeof gtag === 'function') gtag('event', 'generate_lead');
+  </script>
+</BaseLayout>
