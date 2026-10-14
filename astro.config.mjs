@@ -5,5 +5,5 @@ export default defineConfig({
   site: 'https://zonahomesservices.com',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  integrations: [sitemap({ filter: (page) => !page.includes('/404') })],
+  integrations: [sitemap({ filter: (page) => !page.includes('/404') && !page.includes('/review') })],
 });

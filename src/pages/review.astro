@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeedbackForm from '../components/FeedbackForm.astro';
+import Icon from '../components/Icon.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout
+  title="Leave a Review | Zona Homes Services"
+  description="Share your experience with Zona Homes Services on Google, or send us your feedback directly."
+  path="/review/"
+  noindex
+  hasQuote={false}
+>
+  <section class="section review-page">
+    <div class="wrap">
+      <div class="review-head">
+        <h1>How did we do?</h1>
+        <p class="lead">Thank you for choosing Zona Homes Services. Tell us about your experience in the way that works best for you. You can do both.</p>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <h2>Share it on Google</h2>
+          <p>A Google review helps neighbors in Sebring and nearby cities find a crew they can trust.</p>
+          <a class="btn btn-primary review-btn" href={SITE.reviewUrl} target="_blank" rel="noopener"><Icon name="star" />Leave a Google review</a>
+        </div>
+
+        <div class="review-card">
+          <h2>Tell us directly</h2>
+          <p>Prefer to write to us privately, or something was not right? Send us a message. We read every one.</p>
+          <FeedbackForm />
+        </div>
+      </div>
+
+      <p class="review-note">Questions about a job? Call <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -5,6 +5,7 @@ export const SITE = {
   phoneDisplay: '(863) 449-1949',
   phoneTel: '+18634491949',
   slogan: 'We build. We fix. We clean.',
+  reviewUrl: 'https://g.page/r/CdqDm4kvLRMREBM/review',
   locality: 'Sebring',
   region: 'FL',
   ogImage: 'https://res.cloudinary.com/jrdzspyk/image/upload/zona-og-cover.jpg',

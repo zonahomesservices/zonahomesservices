@@ -1,0 +1,57 @@
+---
+import { SITE } from '../data/site';
+---
+<form class="quote-form js-feedback-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value={SITE.web3formsKey} />
+  <input type="hidden" name="subject" value="Customer feedback - Zona Homes Services website" />
+  <input type="hidden" name="from_name" value="Zona Homes Services website" />
+  <input type="hidden" name="page" value="" />
+  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <div class="field">
+    <label for="fb-name">Name (optional)</label>
+    <input id="fb-name" name="name" type="text" autocomplete="name" />
+  </div>
+  <div class="field">
+    <label for="fb-contact">Phone or email (optional)</label>
+    <input id="fb-contact" name="contact" type="text" autocomplete="tel" />
+  </div>
+  <div class="field field-wide">
+    <label for="fb-message">Your message</label>
+    <textarea id="fb-message" name="message" rows="5" required placeholder="Tell us what went well or what we should fix"></textarea>
+  </div>
+  <div class="field-wide form-actions">
+    <button class="btn btn-primary" type="submit">Send message</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </div>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('.js-feedback-form').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const page = form.querySelector<HTMLInputElement>('input[name="page"]');
+    if (page) page.value = location.href;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.className = 'form-status';
+      status.textContent = 'Sending...';
+      submit.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error('failed');
+        form.reset();
+        if (page) page.value = location.href;
+        status.className = 'form-status is-ok';
+        status.textContent = 'Thank you for telling us. We read every message.';
+      } catch {
+        status.className = 'form-status is-error';
+        status.textContent = 'The message did not send. Please call (863) 449-1949 or try again.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  });
+</script>
